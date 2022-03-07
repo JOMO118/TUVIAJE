@@ -31,7 +31,7 @@ include("../connection/Connection.php");
 <body background="../imagen/Fondo registro.jpg">
 
 
-    <form  action="../Reg_user.php" method="post" class="register_form">
+    <form  action="../Acciones/Reg_user.php" method="post" class="register_form">
 
         <h3> <center> REGISTRO CLIENTE </center> </h3>
         <br>

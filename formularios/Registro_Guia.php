@@ -33,7 +33,7 @@ include("../connection/Connection.php");
 
 
 
-    <form action="../Reg_guia.php" method="post" class="register_form" enctype="multipart/form-data">
+    <form action="../Acciones/Reg_guia.php" method="post" class="register_form" enctype="multipart/form-data">
 
         <h3>REGISTRO GUÍA TURÍSTICO</h3>
 

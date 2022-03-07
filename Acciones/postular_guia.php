@@ -5,6 +5,7 @@
 <?php
 session_start();
 echo $_GET['Id'];
+echo   $_SESSION["Id_rol"];
 
 
 
