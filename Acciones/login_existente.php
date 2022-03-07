@@ -17,6 +17,12 @@ if ($validar_login == false) {
         while($row = $validar_login ->fetch_assoc()){
             $dataUser[] = $row;
         }
+  }else 
+  {
+    echo"<script>
+    alert('correo o contraseña incorrecta');
+    window.location='../login.php'
+ </script>";
   }
   
   
