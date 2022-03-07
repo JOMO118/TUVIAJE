@@ -9,22 +9,45 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="Estilos.css" />
 </head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    #form-box {
+        width: 30%;
+        padding: 30px;
+        margin: auto;
+        margin-top: 100px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.9);
+        /* backdrop-filter: blur(10px);  */
+        box-shadow: 7px 13px 37px black;
+    }
+   
+</style>
+
 
 <body background="imagen/Fondo recuperar.jpg">
 
-    <form class="form">
+    <main id="form-box">
+      
 
-        <div class="bg-white text-center p-5 mt-3 center">
+        <div class=" text-center p-5 mt-3 center">
             <h3>Olvidaste tu contraseña</h3>
             <p>Ingrese su email para recuperar contraseña.</p>
-            <div class="input-form">
-                <input type="email" class="form-control" placeholder="Email" required>
+            <div style="width: 100%" ; class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Cuenta" aria-label="Cuenta"
+                    aria-describedby="basic-addon1" name="Email" required>
+                <span class="input-group-text" id="basic-addon1"><span class="icon-user"></span></span>
+
             </div>
             <button type="button" class="btn btn-primary">Enviar</button>
         </div>
-
-    </form>
-
+   
+</main>
     <ul>
         <li>
 
