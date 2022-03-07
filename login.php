@@ -86,7 +86,7 @@
         </li>
         <li>
             <a href="Contacto.html">
-                <p style="font-weight: bold;">Contacto
+                <p style="font-weight: bold;">LUCHO
             </a>
         </li>
 
