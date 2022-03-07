@@ -116,7 +116,7 @@ if (isset($_GET["Sitio"])) {
 
                 <div class="pt-4">
                     <h4>
-                        jjj
+                        PLAYAS
                     </h4>
                     <div class="list-group">
 
