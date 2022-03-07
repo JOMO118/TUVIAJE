@@ -27,7 +27,7 @@ function mostrar_playas_guia(Id_playa) {
                     </p>
                 </div>
                 <div>
-                <button type="button" class="btn btn-dark">Postularme</button>
+               <a href="Acciones/postular_guia.php?=${dato.Id}"> <button type="button" class="btn btn-dark">Postularme</button> </a>
                 </div>
             </div>
         </div>
