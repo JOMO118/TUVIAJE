@@ -33,7 +33,7 @@ if (isset($_GET["Sitio"])) {
 
 <head>
 <script src="JQUERY.js"></script>
-    <script src="mostrar_playas.js"></script>
+    <script src="mostrar_playas_guia.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -126,8 +126,8 @@ if (isset($_GET["Sitio"])) {
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                        <a onclick="mostrar_playas(<?php echo $row['Id']; ?>)" class="list-group-item list-group-item-action list-group-item-primary">
-                            <!-- mostrar_playas(<?php echo $row['Id']; ?>) <a href="Cliente.php?Sitio=<?php echo $row['Id']; ?>" class="list-group-item list-group-item-action list-group-item-primary">-->
+                        <a onclick="mostrar_playas_guia(<?php echo $row['Id']; ?>)" class="list-group-item list-group-item-action list-group-item-primary">
+                            <!-- <a href="Cliente.php?Sitio=<?php echo $row['Id']; ?>" class="list-group-item list-group-item-action list-group-item-primary">-->
                                 <?php echo $row["Nombre"] ?> 
                             </a>
                             
