@@ -115,7 +115,7 @@ if (isset($_GET["Sitio"])) {
                     </div>
                     <div class="Name_profile_user">
                         <p>
-                            <?php echo $nombre_usuario ?> <?php echo $apellido_usuario ?> 
+                            <?php echo $nombre_usuario." ".$apellido_usuario ?> 
                         </p>
 
                     </div>
