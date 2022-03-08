@@ -92,7 +92,7 @@ if (isset($_GET["Sitio"])) {
                             </div>
                             <div class="modal-footer">
                             <a href="Acciones/Logout.php"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Salir</button></a>
-                                <button type="button" class="btn btn-primary">Cancelar</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">cancelar</button>
                             </div>
                         </div>
                     </div>

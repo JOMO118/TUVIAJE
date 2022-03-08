@@ -12,8 +12,11 @@ $result = mysqli_query($con, $sql);
 if ($result === false) {
     echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
   }
-
-  header('Location:../Guia.php');
+  echo"
+  <script>
+   alert('Se ha postulado');
+   window.location='../Guia.php'
+</script>";
   die();
 
 ?>
