@@ -43,7 +43,7 @@ if($_SESSION["Id_rol"]==1){
     $_SESSION["Id"]=$dataCliente[0]["Id"];
     $_SESSION["Nombres"]=$dataCliente[0]["Nombres"];
     $_SESSION["Apellidos"]=$dataCliente[0]["Apellidos"];
-
+    
     header('Location:../Cliente.php');
         die();
 
