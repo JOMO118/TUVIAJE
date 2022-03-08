@@ -23,6 +23,7 @@ if ($validar_login == false) {
     alert('correo o contraseña incorrecta');
     window.location='../login.php'
  </script>";
+ die();
   }
   
   
@@ -39,9 +40,9 @@ if($_SESSION["Id_rol"]==1){
     while($row = $conocer_id ->fetch_assoc()){
         $dataCliente[] = $row;
     }
-    $_SESSION[`Id`]=$dataCliente[0][`Id`];
-    $_SESSION[`Nombres`]=$dataCliente[0][`Nombres`];
-    $_SESSION[`Apellidos`]=$dataCliente[0][`Apellidos`];
+    $_SESSION["Id"]=$dataCliente[0]["Id"];
+    $_SESSION["Nombres"]=$dataCliente[0]["Nombres"];
+    $_SESSION["Apellidos"]=$dataCliente[0]["Apellidos"];
 
     header('Location:../Cliente.php');
         die();
@@ -56,10 +57,11 @@ if($_SESSION["Id_rol"]==1){
     while($row = $conocer_id ->fetch_assoc()){
         $dataGuia[] = $row;
     }
-    $_SESSION[`Id`]=$dataGuia[0][`Id`];
-    $_SESSION[`Nombre`]=$dataGuia[0][`Nombre`];
-    $_SESSION[`Apellidos`]=$dataGuia[0][`Apellidos`];
-    echo $_SESSION[`Id`];
+    $_SESSION["Id"]=$dataGuia[0]["Id"];
+    $_SESSION["Nombre"]=$dataGuia[0]["Nombre"];
+    $_SESSION["Apellidos"]=$dataGuia[0]["Apellidos"];
+    echo $_SESSION["Id"];
+    echo 'console.log($dataGuia[])';
     header('Location:../Guia.php');
     die();
    

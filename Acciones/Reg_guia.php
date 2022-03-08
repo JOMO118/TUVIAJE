@@ -62,14 +62,9 @@ $result = mysqli_query($con, $sql);
 
 
 if ($result === false) {
-
-  echo"
-  <script>
-   console.log($result);
-</script>";
-    
     echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
   }
+  
   $credencialid = $con->insert_id;
   $sql= "INSERT INTO `tuviaje`.`guia` (`Id`, `Nombre`, `Apellidos`, `Celular`, `Edad`, `Email`, `Direccion`, `Genero`, `Estado`, `Tipo_pago`,`Foto`, `Foto_tipo`,`login_Id`)
   VALUES ('$cedula', '$nombre', '$apellido', '$celular', '$edad', '$email', '$direccion','$sexo','activo', '$pago', '$foto' , '$tipo_foto',$credencialid);";

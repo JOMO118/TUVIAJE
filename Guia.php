@@ -2,6 +2,10 @@
 
 include("connection/Connection.php");
 
+session_start();
+
+
+
 if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
 
@@ -26,6 +30,7 @@ if (isset($_GET["Sitio"])) {
 
 
 ?>
+
 
 <!doctype html>
 
@@ -86,7 +91,7 @@ if (isset($_GET["Sitio"])) {
                                 ¿Esta seguro que quiere cerrar sesion?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Salir</button>
+                            <a href="Acciones/Logout.php"><button type="button" class="btn btn-danger" data-bs-dismiss="modal">Salir</button></a>
                                 <button type="button" class="btn btn-primary">Cancelar</button>
                             </div>
                         </div>
@@ -108,7 +113,7 @@ if (isset($_GET["Sitio"])) {
                     </div>
                     <div class="Name_profile_user">
                         <p>
-                            NOMBRE APELLIDO
+                            Nombre Apellido
                         </p>
 
                     </div>
