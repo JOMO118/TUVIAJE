@@ -3,6 +3,8 @@
 include("connection/Connection.php");
 
 session_start();
+$nombre_usuario = $_SESSION["Nombre"];
+$apellido_usuario = $_SESSION["Apellidos"];
 
 
 
@@ -113,7 +115,7 @@ if (isset($_GET["Sitio"])) {
                     </div>
                     <div class="Name_profile_user">
                         <p>
-                            Nombre Apellido
+                            <?php echo $nombre_usuario ?> <?php echo $apellido_usuario ?> 
                         </p>
 
                     </div>

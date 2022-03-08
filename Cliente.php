@@ -2,6 +2,11 @@
 
 include("connection/Connection.php");
 
+
+session_start();
+$nombre_usuario = $_SESSION["Nombres"];
+$apellido_usuario = $_SESSION["Apellidos"];
+
 /*if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
 
@@ -87,7 +92,7 @@ include("connection/Connection.php");
                 </div>
                 <div class="Name_profile_user">
                     <p>
-                        NOMBRE APELLIDO
+                    <?php echo $nombre_usuario ?> <?php echo $apellido_usuario ?> 
                     </p>
 
                 </div>
