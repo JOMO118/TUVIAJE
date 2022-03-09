@@ -52,7 +52,7 @@ function mostrar_guias(Id_playa) {
            
         `;
     });
-            document.getElementById('contenido_guia').innerHTML= template;
+            document.getElementById('contenido-guia').innerHTML= template;
 
         }
       });
