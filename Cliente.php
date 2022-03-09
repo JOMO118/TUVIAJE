@@ -148,7 +148,7 @@ $Id_sitio =$_SESSION["Id_playa"];
                
 </div>
 
-<div id="contenido-guia">
+<div id="contenido-guia" class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
 </div>
 
             </section>
