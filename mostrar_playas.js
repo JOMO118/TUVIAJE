@@ -1,6 +1,7 @@
 function mostrar_playas(Id_playa) {
 
 
+
     $.ajax({
         type: "GET",
         url: "Datos_playa.php?Sitio="+Id_playa,

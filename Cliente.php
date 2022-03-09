@@ -34,6 +34,7 @@ $Id_sitio =$_SESSION["Id_playa"];
 <head>
     <script src="JQUERY.js"></script>
     <script src="mostrar_playas.js"></script>
+    <script src="mostrar_guias.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -111,7 +112,7 @@ $Id_sitio =$_SESSION["Id_playa"];
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                        <a onclick="mostrar_playas(<?php echo $row['Id']; ?>)" class="list-group-item list-group-item-action list-group-item-primary">
+                        <a onclick="mostrar_playas(<?php echo $row['Id']; ?>); mostrar_guias(<?php echo $row['Id']; ?>)" class="list-group-item list-group-item-action list-group-item-primary">
                             <!-- <a href="Cliente.php?Sitio=<?php echo $row['Id']; ?>" class="list-group-item list-group-item-action list-group-item-primary">-->
                                 <?php echo $row["Nombre"] ?> 
                             </a>
@@ -168,67 +169,10 @@ $Id_sitio =$_SESSION["Id_playa"];
                 ?> -->
 </div>
 
+<div id="contenido-guia">
 
-                <?php
-                $sql = "select *from guia where estado ='activo'";
-                $result = mysqli_query($con, $sql);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $nom_completo = $row["Nombre"] . ' ' . $row["Apellidos"];
-                    $destino_postulado =$row["Destino_pos"];
+</div>
 
-                    echo"<script>
-                    alert($Id_sitio == $destino_postulado)
-                    </script>"
-                    ;
-
-                    if($Id_sitio == $destino_postulado ){
-                        ?>
-
-                    <div>
-                        <div class="image-flip">
-                            <div class="mainflip flip-0">
-                                <div class="frontside">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <p><img class=" img-fluid" src=" data:<?php echo $row['Nombre'] ?>;base64, <?php echo base64_encode($row['Foto']) ?>" card image></p>
-                                            <!-- <p><img class=" img-fluid" src="<?php //echo $row["Foto"] 
-                                                                                    ?>" card image></p> -->
-                                            <h4 class="card-title">
-                                                <?php echo $row["Nombre"] ?>
-                                            </h4>
-                                            <p class="card-text">
-                                                <?php echo $row["Edad"] ?> AÑOS
-                                            </p> <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="backside ">
-                                    <div class="card">
-                                        <div class="card-body text-center mt-4">
-
-                                            <h4 class="card-title">
-                                                <?php echo $nom_completo ?>
-                                            </h4>
-                                            <p class="card-text">Calificación: </p>
-                                            <p class="card-text">Celular:
-                                                <?php echo $row["Celular"] ?>
-                                            </p>
-                                            <p class="card-text">Email:
-                                                <?php echo $row["Email"] ?>
-                                            </p>
-                                            <a href="/Acciones/reservar_contrato.php?Id_guia=<?php echo $row['Id']; ?>"><button type="button" class="btn btn-primary"> Solicitar reserva</button></a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                <?php
-                    }
-                }
-                ?>
             </section>
         </main>
         <footer class="row bg-warning" style="height: 70X;">
