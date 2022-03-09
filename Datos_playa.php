@@ -1,8 +1,15 @@
 <?php
 include("connection/Connection.php");
+session_start();
+
 $datos =array();
 if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
+
+    
+$_SESSION["Id_playa"] =  $dato_recibido ;
+
+
 
 
     $sql = "select *from sitio where estado ='activo' and id = $dato_recibido";

@@ -6,6 +6,7 @@ include("connection/Connection.php");
 session_start();
 $nombre_usuario = $_SESSION["Nombres"];
 $apellido_usuario = $_SESSION["Apellidos"];
+$Id_sitio =$_SESSION["Id_playa"];
 
 /*if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
@@ -173,7 +174,15 @@ $apellido_usuario = $_SESSION["Apellidos"];
                 $result = mysqli_query($con, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
                     $nom_completo = $row["Nombre"] . ' ' . $row["Apellidos"];
-                ?>
+                    $destino_postulado =$row["Destino_pos"];
+
+                    echo"<script>
+                    alert($Id_sitio == $destino_postulado)
+                    </script>"
+                    ;
+
+                    if($Id_sitio == $destino_postulado ){
+                        ?>
 
                     <div>
                         <div class="image-flip">
@@ -217,6 +226,7 @@ $apellido_usuario = $_SESSION["Apellidos"];
                     </div>
 
                 <?php
+                    }
                 }
                 ?>
             </section>
