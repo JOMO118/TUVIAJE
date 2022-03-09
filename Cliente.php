@@ -207,7 +207,7 @@ $apellido_usuario = $_SESSION["Apellidos"];
                                             <p class="card-text">Email:
                                                 <?php echo $row["Email"] ?>
                                             </p>
-                                            <a href=""><button type="button" class="btn btn-primary"> Solicitar reserva</button></a>
+                                            <a href="/Acciones/reservar_contrato.php?Id_guia=<?php echo $row['Id']; ?>"><button type="button" class="btn btn-primary"> Solicitar reserva</button></a>
 
                                         </div>
                                     </div>
