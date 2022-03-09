@@ -1,12 +1,13 @@
+
 function mostrar_playas(Id_playa) {
-
-
-
+    
+    mostrar_guias(Id_playa);
     $.ajax({
         type: "GET",
         url: "Datos_playa.php?Sitio="+Id_playa,
         success: function (response) {
         var resultado = JSON.parse(response);
+        let template = "";
         resultado.forEach((dato) => {
 
 

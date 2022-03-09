@@ -1,15 +1,15 @@
-function mostrar_guias(Id_playa) {
+ function mostrar_guias(Id_playa) {
 
     $.ajax({
         type: "GET",
         url: "Datos_guias.php?Sitio="+Id_playa,
-        success: function (response) {
-            console.log(response);
+        success: function (response) {       
         var resultado2 = JSON.parse(response);
+        let template1 = "";
         resultado2.forEach((dato) => {
 
 
-            template =        `
+            template1+=        `
             <div>
             <div class="image-flip">
                 <div class="mainflip flip-0">
@@ -52,8 +52,9 @@ function mostrar_guias(Id_playa) {
            
         `;
     });
-            document.getElementById('contenido-guia').innerHTML= template;
+            document.getElementById('contenido-guia').innerHTML= template1;
 
         }
       });
 }
+
