@@ -6,7 +6,12 @@ include("connection/Connection.php");
 session_start();
 $nombre_usuario = $_SESSION["Nombres"];
 $apellido_usuario = $_SESSION["Apellidos"];
+
+if(isset ($_SESSION["Id_playa"])){
 $Id_sitio =$_SESSION["Id_playa"];
+}else{
+    $Id_sitio = null;
+}
 
 /*if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
