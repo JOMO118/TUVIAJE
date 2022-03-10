@@ -6,6 +6,9 @@
 		session_destroy();
 		header("location: ../login.php"); 
 		die();
+	}else{
+		header("location: ../login.php"); 
+		die();
 	}
 
 ?>

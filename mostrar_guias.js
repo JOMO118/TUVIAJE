@@ -1,4 +1,4 @@
-function mostrar_guias(Id_playa) {
+ function mostrar_guias(Id_playa) {
 
     $.ajax({
         type: "GET",
@@ -57,3 +57,4 @@ function mostrar_guias(Id_playa) {
         }
       });
 }
+
