@@ -20,8 +20,20 @@ VALUES ('solicitado','$Fecha','$Hora','$Id_usuario', '$Id_guia', '$Id_sitio');";
 
 $result = mysqli_query($con, $sql);
 
+$dataUser = array();
+
+
+
+
 if($result===True){
-$enviar-> send_email("danielorobio0316@gmail.com", $Fecha, $Hora);
+
+  $sql = "SELECT * FROM `tuviaje`.`guia` WHERE `Id` = $Id_guia";
+  $result2 = mysqli_query($con, $sql);
+
+  while($row = $result2->fetch_assoc()){
+    $dataUser[] = $row;
+  }
+  $enviar-> send_email( $dataUser[0]["Email"], $Fecha, $Hora);
 }
 
 
