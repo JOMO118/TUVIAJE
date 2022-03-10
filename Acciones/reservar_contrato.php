@@ -6,10 +6,11 @@ include("../connection/Connection.php");
 
 session_start();
 
-$Id_guia = $_GET["Id_guia"];
+$Id_guia = $_POST["id_guia"];
+$fecha  = $_POST["fecha"];
+$hora  = $_POST["hora"];
 $Id_usuario = $_SESSION["Id"];
 $Id_sitio =$_SESSION["Id_playa"];
-
 
 $sql= "INSERT INTO `tuviaje`.`contrato` (`Estado`,`Cliente_Id`, `Guia_Id`, `Sitio_Id`) 
 VALUES ('solicitado','$Id_usuario', '$Id_guia', '$Id_sitio');";

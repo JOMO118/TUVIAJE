@@ -40,6 +40,7 @@ $Id_sitio =$_SESSION["Id_playa"];
     <script src="JQUERY.js"></script>
     <script src="mostrar_playas.js"></script>
     <script src="mostrar_guias.js"></script>
+    <script src="form_contratar_guia.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -154,6 +155,7 @@ $Id_sitio =$_SESSION["Id_playa"];
 </div>
 
 <div id="contenido-guia" class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
+
 </div>
 
             </section>

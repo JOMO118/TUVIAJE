@@ -6,6 +6,7 @@
         success: function (response) {       
         var resultado2 = JSON.parse(response);
         let template1 = "";
+        console.log(resultado2);
         resultado2.forEach((dato) => {
 
 
@@ -23,7 +24,6 @@
                                 </h4>
                                 <p class="card-text">
                                     ${dato.Edad} AÑOS
-                                </p> <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                 <p class="card-text">Email:
                                 ${dato.Email}
                                 </p>
-                                <a href="/Acciones/reservar_contrato.php?Id_guia=${dato.Id}"><button type="button" class="btn btn-primary"> Solicitar reserva</button></a>
+                               <button type="button" onclick = "mostrarvistaContratarGuia(${Id_playa},'${dato.Id}')" class="btn btn-primary"> Solicitar reserva</button>
 
                             </div>
                         </div>
