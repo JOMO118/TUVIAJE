@@ -53,7 +53,7 @@ function mostrarvistaContratarGuia(Id_playa,id_guia) {
                     <div class="col-9 py-4 px-5 d-flex flex-column  align-items-end ">
                         <h1 class="fw-bold text-center w-100 mb-5"> Contratar Guia</h1>
                         <form action="Acciones/reservar_contrato.php" method="post" >
-                            <p class="fw-bold mb-3">Seleccionar el horario para contratar a guian</p>
+                            <p class="fw-bold mb-3">Seleccionar el horario para contratar al guia</p>
                             <div class="row mt-2">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
@@ -67,7 +67,7 @@ function mostrarvistaContratarGuia(Id_playa,id_guia) {
                             </div>
                             <div class="">
                                 <button class="btn btn-primary" type="submit">Contratar guia</button>
-                                <button class="btn btn-danger"> Cancelar</button>
+                               <a href="Cliente.php"> <input type="button" class="btn btn-danger" value="Cancelar"> </input> </a>
                             </div>
                         </form>
                     </div>

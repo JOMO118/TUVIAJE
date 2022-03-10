@@ -4,8 +4,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 class mensajes_correo{
-    public function send_email($email){
-        require 'vendor/autoload.php';
+    public function send_email($email, $fecha, $hora){
+        require '../vendor/autoload.php';
 
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
@@ -36,8 +36,8 @@ class mensajes_correo{
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Solicitud reserva ';
-            $mail->Body    = 'Señor(a) guia turistico usted tiene una solicitud de reserva para los proximos dias <b>in bold!</b>';
-            $mail->AltBody = 'atetamente TUVIAJE';
+            $mail->Body    = 'Señor(a) guia turistico usted tiene una solicitud de reserva para el dia '.$fecha.' y hora'.$hora.' por favor confirmar <b>atentamente TUVIAJE</b>';
+            $mail->AltBody = '';
         
             $mail->send();
             echo 'Message has been sent';
