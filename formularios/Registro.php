@@ -128,10 +128,10 @@ include("../connection/Connection.php");
 
     <ul>
         <li>
-            <a href="principal.html">Inicio</a>
+            <a href="../principal.html">Inicio</a>
         </li>
         <li>
-            <a href="Contacto.html">Contacto</a>
+            <a href="../Contacto.html">Contacto</a>
         </li>
 
     </ul>

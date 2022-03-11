@@ -151,10 +151,6 @@ if (isset($_GET["Sitio"])) {
                         </h4>
                         <div class="list-group">
                             <a href="#"
-                                class="list-group-item list-group-item-action list-group-item-secondary">Información
-                                personal</a>
-
-                            <a href="#"
                                 class="list-group-item list-group-item-action list-group-item-secondary">Reservas</a>
                             <a href="#"
                                 class="list-group-item list-group-item-action list-group-item-secondary">Historial
