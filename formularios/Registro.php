@@ -124,7 +124,7 @@ include("../connection/Connection.php");
     </form>
 
 
-    <hr>
+    <hr>    
 
     <ul>
         <li>

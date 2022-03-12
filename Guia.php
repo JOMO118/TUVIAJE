@@ -6,8 +6,6 @@ session_start();
 $nombre_usuario = $_SESSION["Nombre"];
 $apellido_usuario = $_SESSION["Apellidos"];
 
-
-
 if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
 
@@ -166,32 +164,9 @@ if (isset($_GET["Sitio"])) {
 
 
             <section class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
-            <div id="contenido-playas">
-            <!-- <?php
-                if (true === (isset($dato_recibido))) {
-                ?>
 
-                    <div class="row g-0">
-                        <div class="col-md-6">
-                            <img src="<?php echo $imagen; ?>" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <?php echo $nombre; ?>
-                                </h5>
-                                <p class="card-text" style="text-align:justify;">
-                                    <?php echo $descripcion; ?>
-                                </p>
-                            </div>
-                            <div>
-                            <button type="button" class="btn btn-dark">Postularme</button>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                }
-                ?> -->
+            <div id="contenido-playas">
+            
                 
                 </div>
             </section>

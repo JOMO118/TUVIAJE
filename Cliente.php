@@ -7,9 +7,9 @@ session_start();
 $nombre_usuario = $_SESSION["Nombres"];
 $apellido_usuario = $_SESSION["Apellidos"];
 
-if(isset ($_SESSION["Id_playa"])){
-$Id_sitio =$_SESSION["Id_playa"];
-}else{
+if (isset($_SESSION["Id_playa"])) {
+    $Id_sitio = $_SESSION["Id_playa"];
+} else {
     $Id_sitio = null;
 }
 
@@ -92,19 +92,19 @@ $Id_sitio =$_SESSION["Id_playa"];
         <main class="row " style="min-height: 90%;">
             <aside class="col-3 background">
 
-            <div class="Profile_user">
-                <div  class="avatar-user">
-                    <abbr title="CAMBIAR PERFIL">
-                    <a href="Conf_perfil.php"> <img src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
-                    </abbr>
-                </div>
-                <div class="Name_profile_user">
-                    <p>
-                    <?php echo $nombre_usuario." ".$apellido_usuario ?> 
-                    </p>
+                <div class="Profile_user">
+                    <div class="avatar-user">
+                        <abbr title="CAMBIAR PERFIL">
+                            <a href="Conf_perfil.php"> <img src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
+                        </abbr>
+                    </div>
+                    <div class="Name_profile_user">
+                        <p>
+                            <?php echo $nombre_usuario . " " . $apellido_usuario ?>
+                        </p>
 
+                    </div>
                 </div>
-            </div> 
 
                 <div class="pt-4">
                     <h4>
@@ -118,9 +118,9 @@ $Id_sitio =$_SESSION["Id_playa"];
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                        <a onclick="mostrar_playas(<?php echo $row['Id']; ?>);mostrar_guias(<?php echo $row['Id']; ?>);" class="list-group-item list-group-item-action list-group-item-primary">
-                            <!-- <a href="Cliente.php?Sitio=<?php echo $row['Id']; ?>" class="list-group-item list-group-item-action list-group-item-primary">-->
-                                <?php echo $row["Nombre"] ?> 
+                            <a onclick="mostrar_playas(<?php echo $row['Id']; ?>);mostrar_guias(<?php echo $row['Id']; ?>);" class="list-group-item list-group-item-action list-group-item-primary">
+
+                                <?php echo $row["Nombre"] ?>
                             </a>
                         <?php
                         }
@@ -150,13 +150,13 @@ $Id_sitio =$_SESSION["Id_playa"];
 
 
             <section class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
-<div id="contenido-playas">
-               
-</div>
+                <div id="contenido-playas">
 
-<div id="contenido-guia" class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
+                </div>
 
-</div>
+                <div id="contenido-guia" class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
+
+                </div>
 
             </section>
         </main>
