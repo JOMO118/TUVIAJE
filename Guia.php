@@ -39,6 +39,7 @@ if (isset($_GET["Sitio"])) {
 <head>
 <script src="JQUERY.js"></script>
     <script src="mostrar_playas_guia.js"></script>
+    <script src="tabla_contratos.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -148,7 +149,7 @@ if (isset($_GET["Sitio"])) {
                             INFORMACIÓN GUIA
                         </h4>
                         <div class="list-group">
-                            <a href="#"
+                            <a onclick ="mostrar_tabla()"
                                 class="list-group-item list-group-item-action list-group-item-secondary">Reservas</a>
                             <a href="#"
                                 class="list-group-item list-group-item-action list-group-item-secondary">Historial
@@ -169,6 +170,13 @@ if (isset($_GET["Sitio"])) {
             
                 
                 </div>
+
+                
+                <div id="contenido-tabla">
+            
+                
+            </div>
+
             </section>
         </main>
         <footer class="row bg-warning" style="height: 70X;">
