@@ -5,12 +5,14 @@ include("connection/Connection.php");
 session_start();
 $nombre_usuario = $_SESSION["Nombre"];
 $apellido_usuario = $_SESSION["Apellidos"];
+$Id = $_SESSION["Id"];
+$Foto = $_SESSION["Foto"];
 
 if (isset($_GET["Sitio"])) {
     $dato_recibido = $_GET["Sitio"];
 
 
-    $sql = "select *from sitio where estado ='activo' and id = $dato_recibido";
+    $sql = "SELECT * FROM sitio WHERE estado ='activo' AND id = $dato_recibido";
     $result = mysqli_query($con, $sql);
     while ($row = mysqli_fetch_assoc($result)) {
         $nombre = $row["Nombre"];
@@ -20,13 +22,6 @@ if (isset($_GET["Sitio"])) {
 } else {
     $dato_recibido = null;
 }
-// $dato_recibido = $_GET["Sitio"];
-// if (true === isset($dato_recibido)){
-//     $sql = "select *from sitio where estado ='activo' and id = $dato_recibido";
-// }else{
-//     $sql ="select *from sitio where estado ='activo'";
-// }
-
 
 
 ?>
@@ -64,10 +59,16 @@ if (isset($_GET["Sitio"])) {
             <div class="col-4  d-flex justify-content-end align-items-end">
 
             <div class="d-grid gap-4 d-md-block">
-                <button style="margin-right: 15px;" type="button" class="btn btn-primary position-relative">
+                <button onclick="mostrar_tabla()" style="margin-right: 15px;" type="button" class="btn btn-primary position-relative">
                     Inbox
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        99+
+
+                    <?php
+                        $sql = "SELECT * FROM contrato WHERE Estado ='solicitado' and Guia_Id= $Id";
+                        $result = mysqli_query($con, $sql);
+                        echo mysqli_num_rows($result);  
+                        ?>
+                        
                         <span class="visually-hidden">unread messages</span>
                     </span>
                 </button>
@@ -108,8 +109,8 @@ if (isset($_GET["Sitio"])) {
                 <div class="Profile_user">
                     <div class="avatar-user">
                         <abbr title="CAMBIAR PERFIL">
-                            <a href="Conf_perfil.php"> <img
-                                    src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
+                            <a href="formularios/Conf_perfil.php"> <img
+                                    src="<?php echo $Foto ?>"> </a>
                         </abbr>
                     </div>
                     <div class="Name_profile_user">
@@ -128,7 +129,7 @@ if (isset($_GET["Sitio"])) {
 
 
                     <?php
-                        $sql = "select *from sitio where estado ='activo'";
+                        $sql = "SELECT * FROM sitio WHERE estado ='activo'";
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>

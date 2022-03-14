@@ -32,7 +32,7 @@ if ($validar_login == false) {
 
 if($_SESSION["Id_rol"]==1){
     $Id_cliente= $dataUser[0]['Id'];
-    $conocer_id =  mysqli_query($con,"SELECT  Id, Nombres, Apellidos FROM `cliente` where login_Id=$Id_cliente");
+    $conocer_id =  mysqli_query($con,"SELECT  Id, Nombres, Apellidos, Email FROM `cliente` where login_Id=$Id_cliente");
     $dataCliente = array();
     if ($conocer_id == false) {
         echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
@@ -41,15 +41,16 @@ if($_SESSION["Id_rol"]==1){
         $dataCliente[] = $row;
     }
     $_SESSION["Id"]=$dataCliente[0]["Id"];
-    $_SESSION["Nombres"]=$dataCliente[0]["Nombres"];
+    $_SESSION["Nombre"]=$dataCliente[0]["Nombres"];
     $_SESSION["Apellidos"]=$dataCliente[0]["Apellidos"];
+    $_SESSION["Email"]=$dataCliente[0]["Email"];
     
     header('Location:../Cliente.php');
         die();
 
 } else if ($_SESSION["Id_rol"]==2){
     $Id_guia= $dataUser[0]['Id'];
-    $conocer_id =  mysqli_query($con,"SELECT  Id, Nombre, Apellidos FROM `guia` where login_Id=$Id_guia");
+    $conocer_id =  mysqli_query($con,"SELECT  Id, Nombre, Apellidos, Email, Foto FROM `guia` where login_Id=$Id_guia");
     $dataGuia = array();
     if ($conocer_id == false) {
         echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
@@ -60,8 +61,8 @@ if($_SESSION["Id_rol"]==1){
     $_SESSION["Id"]=$dataGuia[0]["Id"];
     $_SESSION["Nombre"]=$dataGuia[0]["Nombre"];
     $_SESSION["Apellidos"]=$dataGuia[0]["Apellidos"];
-    echo $_SESSION["Id"];
-    echo 'console.log($dataGuia[])';
+    $_SESSION["Email"]=$dataGuia[0]["Email"];
+    $_SESSION["Foto"] = $dataGuia[0]["Foto"];
     header('Location:../Guia.php');
     die();
    

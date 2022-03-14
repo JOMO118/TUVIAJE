@@ -4,7 +4,7 @@ include("connection/Connection.php");
 
 
 session_start();
-$nombre_usuario = $_SESSION["Nombres"];
+$nombre_usuario = $_SESSION["Nombre"];
 $apellido_usuario = $_SESSION["Apellidos"];
 
 if (isset($_SESSION["Id_playa"])) {
@@ -95,7 +95,7 @@ if (isset($_SESSION["Id_playa"])) {
                 <div class="Profile_user">
                     <div class="avatar-user">
                         <abbr title="CAMBIAR PERFIL">
-                            <a href="Conf_perfil.php"> <img src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
+                            <a href="/formularios/conf_perfil.php"> <img src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
                         </abbr>
                     </div>
                     <div class="Name_profile_user">
