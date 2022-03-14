@@ -161,24 +161,7 @@ if (isset($_SESSION["Id_playa"])) {
 
             </section>
         </main>
-        <footer  style="height: 70X;">
-
-            <div class=" d-flex justify-content-end align-items-end">
-
-
-
-
-                <ul style="color: white;">
-                    <li >
-                        <a href="principal.html" style="color: white;">Inicio</a>
-                    </li>
-                    <li style="color: white;">
-                        <a href="Contacto.html" style="color: white;">Contacto</a>
-                    </li>
-
-                </ul>
-            </div>
-        </footer>
+       
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->

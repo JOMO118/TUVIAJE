@@ -15,10 +15,10 @@ function mostrar_playas_guia(Id_playa) {
 
             <div class="row g-0">
             <div class="col-md-6">
-                <img src="${dato.Imagen}" class="img-fluid rounded-start" alt="...">
+                <img src="${dato.Imagen}" class="img-fluid rounded-start" alt="..." id="imagen-playa">
             </div >
             <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body" id="cuerpo-tarjeta">
                     <h5 class="card-title" style="color: white;" >
                     ${dato.Nombre}
                     </h5>

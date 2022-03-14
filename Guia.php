@@ -44,19 +44,33 @@ if (isset($_GET["Sitio"])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Clientes</title>
+    <title>GUIAS</title>
 </head>
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+  }
 
-<body>
+  a{
+    font-size: 20px;
+  }
+
+</style>
+<body id="contenido_fondo">
 
     <main class="container-fluid vh-100 ">
-        <header class="row " style="height: 10%;">
+     
+        <header class="row " style="height: 12%;  background-color: rgba(0, 0, 0, 0.4);">
             <div class="col-8  d-flex justify-content-end align-items-center">
-                <h1>TUVIAJE.COM </h1>
+                <h1 style="color: white;">TUVIAJE.COM </h1>
+
 
             </div>
 
-            <div class="col-4  d-flex justify-content-end align-items-end">
+            <div class="col-4  d-flex justify-content-end align-items-center">
 
             <div class="d-grid gap-4 d-md-block">
                 <button onclick="mostrar_tabla()" style="margin-right: 15px;" type="button" class="btn btn-primary position-relative">
@@ -104,7 +118,7 @@ if (isset($_GET["Sitio"])) {
 
 
         <main class="row " style="min-height: 90%;">
-            <aside class="col-3 background">
+            <aside class="col-2 background">
 
                 <div class="Profile_user">
                     <div class="avatar-user">
@@ -114,7 +128,7 @@ if (isset($_GET["Sitio"])) {
                         </abbr>
                     </div>
                     <div class="Name_profile_user">
-                        <p>
+                        <p style="color: white;">
                             <?php echo $nombre_usuario." ".$apellido_usuario ?> 
                         </p>
 
@@ -122,7 +136,7 @@ if (isset($_GET["Sitio"])) {
                 </div>
 
                 <div class="pt-4">
-                    <h4>
+                    <h4 style="color: black;">
                         PLAYAS
                     </h4>
                     <div class="list-group">
@@ -133,7 +147,7 @@ if (isset($_GET["Sitio"])) {
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                        <a onclick="mostrar_playas_guia(<?php echo $row['Id']; ?>)" class="list-group-item list-group-item-action list-group-item-primary">
+                        <a onclick="mostrar_playas_guia(<?php echo $row['Id']; ?>)" class="list-group-item list-group-item-action list-group-item-primary" id="grupo_playas">
                             <!-- <a href="Cliente.php?Sitio=<?php echo $row['Id']; ?>" class="list-group-item list-group-item-action list-group-item-primary">-->
                                 <?php echo $row["Nombre"] ?> 
                             </a>
@@ -145,27 +159,12 @@ if (isset($_GET["Sitio"])) {
                     </div>
 
 
-                    <div>
-                        <h4>
-                            INFORMACIÓN GUIA
-                        </h4>
-                        <div class="list-group">
-                            <a onclick ="mostrar_tabla()"
-                                class="list-group-item list-group-item-action list-group-item-secondary">Reservas</a>
-                            <a href="#"
-                                class="list-group-item list-group-item-action list-group-item-secondary">Historial
-                                viajes</a>
-                            <a href="#"
-                                class="list-group-item list-group-item-action list-group-item-secondary">Calificar
-                                guía</a>
-
-                        </div>
-
+                   
 
             </aside>
 
 
-            <section class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
+            <section class="col-10  d-flex justify-content-start align-items-center flex-wrap " style="padding-top: 200px;">
 
             <div id="contenido-playas">
             
@@ -180,24 +179,7 @@ if (isset($_GET["Sitio"])) {
 
             </section>
         </main>
-        <footer class="row bg-warning" style="height: 70X;">
-
-            <div class=" d-flex justify-content-end align-items-end">
-
-
-
-
-                <ul>
-                    <li>
-                        <a href="principal.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="Contacto.html">Contacto</a>
-                    </li>
-
-                </ul>
-            </div>
-        </footer>
+      
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->
