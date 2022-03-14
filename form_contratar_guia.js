@@ -9,10 +9,10 @@ function mostrarvistaContratarGuia(Id_playa,id_guia) {
             resultado2.forEach((dato) => {
     
                 template1+=        `
-            <div class="mt-5 pt-4">
+            <div>
                 <section class="row">
                     <!-- GUIA -->
-                    <div class="col-3">
+                    <div class="col-4">
                         <div>
                             <div class="image-flip">
                                 <div class="mainflip flip-0">
@@ -50,7 +50,7 @@ function mostrarvistaContratarGuia(Id_playa,id_guia) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-9 py-4 px-5 d-flex flex-column  align-items-end ">
+                    <div  class="col-8  d-flex flex-column  align-items-end contrato-formulario">
                         <h1 class="fw-bold text-center w-100 mb-5"> Contratar Guia</h1>
                         <form action="Acciones/reservar_contrato.php" method="post" >
                             <p class="fw-bold mb-3">Seleccionar el horario para contratar al guia</p>

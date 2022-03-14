@@ -62,19 +62,21 @@ if (isset($_SESSION["Id_playa"])) {
   a{
     font-size: 20px;
   }
+
+
   
 
 </style>
-<body background="imagen/fondo_cliente.jpg">
+<body id="contenido_fondo">
 
     <main class="container-fluid vh-100 ">
-        <header class="row " style="height: 10%;">
+        <header class="row " style="height: 12%;  background-color: rgba(0, 0, 0, 0.4);">
             <div class="col-8  d-flex justify-content-end align-items-center">
                 <h1 style="color: white;">TUVIAJE.COM </h1>
 
             </div>
 
-            <div class="col-4  d-flex justify-content-end align-items-end">
+            <div class="col-4  d-flex justify-content-end align-items-center">
 
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Cerrar Sesion
@@ -102,8 +104,8 @@ if (isset($_SESSION["Id_playa"])) {
         </header>
 
 
-        <main class="row " style="min-height: 90%;">
-            <aside class="col-3 background">
+        <main class="row ">
+            <aside class="col-2 background">
 
                 <div class="Profile_user">
                     <div class="avatar-user">
@@ -120,7 +122,7 @@ if (isset($_SESSION["Id_playa"])) {
                 </div>
 
                 <div class="pt-4">
-                    <h4 style="color: white;">
+                    <h4 style="color: black;">
                         PLAYAS
                     </h4>
                     <div class="list-group">
@@ -131,7 +133,7 @@ if (isset($_SESSION["Id_playa"])) {
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                            <a onclick="mostrar_playas(<?php echo $row['Id']; ?>);mostrar_guias(<?php echo $row['Id']; ?>);" class="list-group-item list-group-item-action list-group-item-primary ">
+                            <a onclick="mostrar_playas(<?php echo $row['Id']; ?>);mostrar_guias(<?php echo $row['Id']; ?>);" class="list-group-item list-group-item-action" id="grupo_playas">
 
                                 <?php echo $row["Nombre"] ?>
                             </a>
@@ -147,7 +149,8 @@ if (isset($_SESSION["Id_playa"])) {
             </aside>
 
 
-            <section class="col-9 pt-5    d-flex justify-content-start align-items-center flex-wrap ">
+            <section class="col-10 d-flex justify-content-start align-items-center flex-wrap "  style="padding-top: 200px;">
+
                 <div id="contenido-playas">
 
                 </div>
