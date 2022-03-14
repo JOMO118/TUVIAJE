@@ -51,13 +51,26 @@ if (isset($_SESSION["Id_playa"])) {
 
     <title>Clientes</title>
 </head>
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+  }
 
-<body>
+  a{
+    font-size: 20px;
+  }
+  
+
+</style>
+<body background="imagen/fondo_cliente.jpg">
 
     <main class="container-fluid vh-100 ">
         <header class="row " style="height: 10%;">
             <div class="col-8  d-flex justify-content-end align-items-center">
-                <h1>TUVIAJE.COM </h1>
+                <h1 style="color: white;">TUVIAJE.COM </h1>
 
             </div>
 
@@ -99,15 +112,15 @@ if (isset($_SESSION["Id_playa"])) {
                         </abbr>
                     </div>
                     <div class="Name_profile_user">
-                        <p>
-                            <?php echo $nombre_usuario . " " . $apellido_usuario ?>
+                        <p style="color: white;">
+                            <?php echo  $nombre_usuario . " " . $apellido_usuario ?>
                         </p>
 
                     </div>
                 </div>
 
                 <div class="pt-4">
-                    <h4>
+                    <h4 style="color: white;">
                         PLAYAS
                     </h4>
                     <div class="list-group">
@@ -118,7 +131,7 @@ if (isset($_SESSION["Id_playa"])) {
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                            <a onclick="mostrar_playas(<?php echo $row['Id']; ?>);mostrar_guias(<?php echo $row['Id']; ?>);" class="list-group-item list-group-item-action list-group-item-primary">
+                            <a onclick="mostrar_playas(<?php echo $row['Id']; ?>);mostrar_guias(<?php echo $row['Id']; ?>);" class="list-group-item list-group-item-action list-group-item-primary ">
 
                                 <?php echo $row["Nombre"] ?>
                             </a>
@@ -129,22 +142,7 @@ if (isset($_SESSION["Id_playa"])) {
                     </div>
 
 
-                    <div>
-                        <h4>
-                            INFORMACIÓN CLIENTE
-                        </h4>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Información
-                                personal</a>
-
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Reservas</a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Historial
-                                viajes</a>
-                            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Calificar
-                                guía</a>
-
-                        </div>
-
+                  
 
             </aside>
 
@@ -160,19 +158,19 @@ if (isset($_SESSION["Id_playa"])) {
 
             </section>
         </main>
-        <footer class="row bg-warning" style="height: 70X;">
+        <footer  style="height: 70X;">
 
             <div class=" d-flex justify-content-end align-items-end">
 
 
 
 
-                <ul>
-                    <li>
-                        <a href="principal.html">Inicio</a>
+                <ul style="color: white;">
+                    <li >
+                        <a href="principal.html" style="color: white;">Inicio</a>
                     </li>
-                    <li>
-                        <a href="Contacto.html">Contacto</a>
+                    <li style="color: white;">
+                        <a href="Contacto.html" style="color: white;">Contacto</a>
                     </li>
 
                 </ul>
