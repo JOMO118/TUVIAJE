@@ -164,7 +164,7 @@ if (isset($_GET["Sitio"])) {
             </aside>
 
 
-            <section class="col-10  d-flex justify-content-start align-items-center flex-wrap " style="padding-top: 200px;">
+            <section class="col-10  d-flex justify-content-start align-items-center flex-wrap">
 
             <div id="contenido-playas">
             
@@ -172,7 +172,7 @@ if (isset($_GET["Sitio"])) {
                 </div>
 
                 
-                <div id="contenido-tabla">
+                <div id="contenido_tabla">
             
                 
             </div>

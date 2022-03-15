@@ -31,6 +31,7 @@ function mostrar_playas(Id_playa) {
 
         `;
     });
+            document.getElementById('contenido_tabla').innerHTML= "";
             document.getElementById('contenido-playas').innerHTML= template;
 
         }
