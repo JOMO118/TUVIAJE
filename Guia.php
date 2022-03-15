@@ -33,8 +33,8 @@ if (isset($_GET["Sitio"])) {
 
 <head>
 <script src="JQUERY.js"></script>
-    <script src="mostrar_playas_guia.js"></script>
-    <script src="tabla_contratos.js"></script>
+    <script src="JS/mostrar_playas_guia.js"></script>
+    <script src="JS/tabla_contratos.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">

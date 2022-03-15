@@ -38,8 +38,8 @@ if (isset($_SESSION["Id_playa"])) {
 
 <head>
     <script src="JQUERY.js"></script>
-    <script src="mostrar_playas.js"></script>
-    <script src="mostrar_guias.js"></script>
+    <script src="JS/mostrar_playas.js"></script>
+    <script src="JS/mostrar_guias.js"></script>
     <script src="form_contratar_guia.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->

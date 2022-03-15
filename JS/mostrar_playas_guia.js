@@ -4,7 +4,7 @@ function mostrar_playas_guia(Id_playa) {
 
     $.ajax({
         type: "GET",
-        url: "Datos_playa.php?Sitio="+Id_playa,
+        url: "./Datos_playa.php?Sitio="+Id_playa,
         success: function (response) {
         var resultado = JSON.parse(response);
 
@@ -62,3 +62,4 @@ function mostrar_playas_guia(Id_playa) {
         }
       });
 }
+

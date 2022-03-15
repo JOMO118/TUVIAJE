@@ -2,7 +2,7 @@
 
     $.ajax({
         type: "GET",
-        url: "Datos_guias.php?Sitio="+Id_playa,
+        url: "./Datos_guias.php?Sitio="+Id_playa,
         success: function (response) {       
         var resultado2 = JSON.parse(response);
         let template1 = "";
