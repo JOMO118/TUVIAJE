@@ -40,7 +40,7 @@ if (isset($_SESSION["Id_playa"])) {
     <script src="JQUERY.js"></script>
     <script src="JS/mostrar_playas.js"></script>
     <script src="JS/mostrar_guias.js"></script>
-    <script src="form_contratar_guia.js"></script>
+    <script src="JS/form_contratar_guia.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -149,7 +149,7 @@ if (isset($_SESSION["Id_playa"])) {
             </aside>
 
 
-            <section class="col-10 d-flex justify-content-start align-items-center flex-wrap "  style="padding-top: 200px;">
+            <section class="col-10 d-flex justify-content-start align-items-center flex-wrap "  style="padding-top: 20px;">
 
                 <div id="contenido-playas">
 
