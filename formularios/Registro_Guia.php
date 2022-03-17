@@ -149,7 +149,7 @@ include("../connection/Connection.php");
     <br>
     <ul>
         <li>
-            <a href="../Principal.html">Inicio</a>
+            <a href="../index.php">Inicio</a>
         </li>
         <li>
             <a href="../Contacto.html">Contacto</a>

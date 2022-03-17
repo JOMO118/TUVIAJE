@@ -80,7 +80,7 @@
     <ul>
         <li>
 
-            <a href="principal.html">
+            <a href="index.php">
                 <p style="font-weight: bold;">Inicio</p>
             </a>
         </li>
