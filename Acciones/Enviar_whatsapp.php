@@ -8,7 +8,7 @@ require '../vendor/autoload.php';
 
  
 $sid    = "AC3590820266fb607545d7d4f31506efc0"; 
-$token  = "9128b3f36b61036cd172ddeb893e5284"; 
+$token  = "3f5800b2ab0a6be6f7c61cdf31ae3007"; 
 $twilio = new Client($sid, $token); 
  
 $message = $twilio->messages 
