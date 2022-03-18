@@ -5,8 +5,15 @@ include("../connection/Connection.php");
 $email =$_POST['Email'];
 $contrasena =$_POST['Contrasena'];
 
-$validar_login = mysqli_query($con, "SELECT * FROM `login` WHERE Correo='$email' AND contrasena='$contrasena'");
 
+$sql="SELECT * FROM `login` WHERE Correo='$email'";
+
+$validar_login = mysqli_query($con, $sql);
+
+while ($row2 = mysqli_fetch_assoc($validar_login)) {
+    $contrasena_desencriptada=password_verify($contrasena, $row2["Contrasena"]);
+    
+}
 
 if ($validar_login == false) {  
     echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
@@ -14,16 +21,17 @@ if ($validar_login == false) {
 
   $dataUser = array();
   if(mysqli_num_rows($validar_login )>0){
+    echo mysqli_num_rows($validar_login);
         while($row = $validar_login ->fetch_assoc()){
             $dataUser[] = $row;
         }
   }else 
   {
-    echo"<script>
-    alert('correo o contraseña incorrecta');
-    window.location='../login.php'
- </script>";
- die();
+//     echo"<script>
+//     alert('correo o contraseña incorrecta');
+//     window.location='../login.php'
+//  </script>";
+//  die();
   }
   
   

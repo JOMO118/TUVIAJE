@@ -15,6 +15,10 @@ $email =$_POST['Email_guia'];
 $contrasena =$_POST['Contrasena_guia'];
 $pago = $_POST['Pago'];
 
+$contrasena_encrip= password_hash($contrasena, PASSWORD_DEFAULT, ['cost' => 10]);
+
+
+
 // $foto=addslashes(file_get_contents($_FILES['foto_guia']['tmp_name']));
 $tipo_foto= $_FILES['foto_guia']['type'];
 $nom_foto = $_FILES['foto_guia']['name'];
@@ -57,7 +61,7 @@ $foto = "fotos/".basename($_FILES["foto_guia"]["name"]);
 
 
 $sql= "INSERT INTO `login` (`Estado`, `Contrasena`, `Correo`, `Rol_Id_rol`)
- VALUES ('activo', '$contrasena', '$email','2');";
+ VALUES ('activo', '$contrasena_encrip', '$email','2');";
 $result = mysqli_query($con, $sql);
 
 

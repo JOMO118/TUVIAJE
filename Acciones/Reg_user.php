@@ -14,6 +14,8 @@ $email =$_POST['Email_user'];
 $contrasena =$_POST['Contrasena_user'];
 
 
+$contrasena_encrip= password_hash($contrasena, PASSWORD_DEFAULT, ['cost' => 10]);
+
 
 $verificar_correo = mysqli_query($con, "SELECT * FROM cliente WHERE Email='$email'");
 $verificar_cedula = mysqli_query($con, "SELECT * FROM cliente WHERE Email='$cedula'");
@@ -42,7 +44,7 @@ if(mysqli_num_rows($verificar_cedula) > 0){
 }
 
 $sql= "INSERT INTO `login` (`Estado`, `Contrasena`, `Correo`, `Rol_Id_rol`)
- VALUES ('activo', '$contrasena', '$email','1');";
+ VALUES ('activo', '$contrasena_encrip', '$email','1');";
 $result = mysqli_query($con, $sql);
 
 if ($result === false) {
