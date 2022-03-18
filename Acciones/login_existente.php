@@ -6,27 +6,23 @@ $email =$_POST['Email'];
 $contrasena =$_POST['Contrasena'];
 
 
-$sql="SELECT * FROM `login` WHERE Correo='$email'";
 
-$validar_login = mysqli_query($con, $sql);
+$validar_login = mysqli_query($con,"SELECT * FROM `login` WHERE Correo='$email'");
 
-while ($row2 = mysqli_fetch_assoc($validar_login)) {
-    $contrasena_desencriptada=password_verify($contrasena, $row2["Contrasena"]);
-    
-}
+
+$contrasena_encriptada= mysqli_fetch_array($validar_login);
 
 if ($validar_login == false) {  
     echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
 }
 
   $dataUser = array();
-  if(mysqli_num_rows($validar_login )>0){
-    echo mysqli_num_rows($validar_login);
-        while($row = $validar_login ->fetch_assoc()){
-            $dataUser[] = $row;
+  if(mysqli_num_rows($validar_login)>0 && (password_verify($contrasena,$contrasena_encriptada["Contrasena"]))){
+      while($row = $validar_login ->fetch_assoc()){
+          $dataUser[] = $row;
         }
-  }else 
-  {
+    }else 
+    {
 //     echo"<script>
 //     alert('correo o contraseña incorrecta');
 //     window.location='../login.php'
