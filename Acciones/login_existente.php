@@ -5,37 +5,36 @@ include("../connection/Connection.php");
 $email =$_POST['Email'];
 $contrasena =$_POST['Contrasena'];
 
-
-
-$validar_login = mysqli_query($con,"SELECT * FROM `login` WHERE Correo='$email'");
-
-
-$contrasena_encriptada= mysqli_fetch_array($validar_login);
-
+$sql= "SELECT * FROM `login` WHERE Correo='$email'";
+$validar_login = mysqli_query($con, $sql);
 if ($validar_login == false) {  
-    echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
-}
+        echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
+    }
+    $mostrar = array();
+    while($row=mysqli_fetch_assoc($validar_login)) {
+     $mostrar= $row;
+    }
+$dataUser = array();
+    if(mysqli_num_rows($validar_login)>0 && (password_verify($contrasena,$mostrar["Contrasena"]))){
+            //  
+            $dataUser=$mostrar;
+            }else 
+            {
+            echo"<script>
+            alert('correo o contraseña incorrecta');
+            window.location='../login.php'
+         </script>";
+         die();
+          }
 
-  $dataUser = array();
-  if(mysqli_num_rows($validar_login)>0 && (password_verify($contrasena,$contrasena_encriptada["Contrasena"]))){
-      while($row = $validar_login ->fetch_assoc()){
-          $dataUser[] = $row;
-        }
-    }else 
-    {
-//     echo"<script>
-//     alert('correo o contraseña incorrecta');
-//     window.location='../login.php'
-//  </script>";
-//  die();
-  }
+    
   
-  
+ 
     session_start();
-    $_SESSION["Id_rol"]= $dataUser[0]["Rol_Id_rol"];
+    $_SESSION["Id_rol"]= $dataUser["Rol_Id_rol"];
 
 if($_SESSION["Id_rol"]==1){
-    $Id_cliente= $dataUser[0]['Id'];
+    $Id_cliente= $dataUser['Id'];
     $conocer_id =  mysqli_query($con,"SELECT  Id, Nombres, Apellidos, Email FROM `cliente` where login_Id=$Id_cliente");
     $dataCliente = array();
     if ($conocer_id == false) {
@@ -53,7 +52,7 @@ if($_SESSION["Id_rol"]==1){
         die();
 
 } else if ($_SESSION["Id_rol"]==2){
-    $Id_guia= $dataUser[0]['Id'];
+    $Id_guia= $dataUser['Id'];
     $conocer_id =  mysqli_query($con,"SELECT  Id, Nombre, Apellidos, Email, Foto FROM `guia` where login_Id=$Id_guia");
     $dataGuia = array();
     if ($conocer_id == false) {
@@ -71,24 +70,4 @@ if($_SESSION["Id_rol"]==1){
     die();
    
 }
-// $_SESSION["Id"]=;
 
-// if(mysqli_num_rows($validar_login) > 0){
-//     header('Location:Cliente.php');
-// }else{
-//     header('Location:login.php');
-// }
-
-
-// $validar_login = mysqli_query($con, "SELECT * FROM `login_guia` login
-// WHERE Correo_guia='$email' AND contrasena_guia='$contrasena'");
-
-// if ($validar_login === false) {
-//     echo " <p class='text-white'> SQL Error en credenciales: </p>".$con->error;;
-//   }
-
-// if(mysqli_num_rows($validar_login) > 0){
-//     header('guia.php');
-// }else{
-//     header('Location:login.php');
-// }

@@ -26,7 +26,7 @@ $tmp_foto = $_FILES['foto_guia']['tmp_name'];
 move_uploaded_file($tmp_foto, 'fotos/'.$nom_foto);
 // $foto = file_get_contents('fotos/'.$nom_foto);
 $foto = "fotos/".basename($_FILES["foto_guia"]["name"]);
-
+ 
 
  //Verificar si no hay correos repetidos en la Bases de Datos
 
