@@ -110,7 +110,7 @@ if (isset($_SESSION["Id_playa"])) {
                 <div class="Profile_user">
                     <div class="avatar-user">
                         <abbr title="CAMBIAR PERFIL">
-                            <a href="/formularios/conf_perfil.php"> <img src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
+                            <a href="formularios/conf_perfil_cliente.php"> <img src="https://pbs.twimg.com/media/D-Ft50KXsAQreOr?format=jpg&amp;name=large"> </a>
                         </abbr>
                     </div>
                     <div class="Name_profile_user">

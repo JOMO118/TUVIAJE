@@ -4,7 +4,6 @@ $nombre_usuario = $_SESSION["Nombre"];
 $apellido_usuario = $_SESSION["Apellidos"];
 $Id = $_SESSION["Id"];
 $Email = $_SESSION["Email"];
-$Foto = $_SESSION["Foto"];
 ?>
 
 
@@ -28,24 +27,10 @@ $Foto = $_SESSION["Foto"];
 <body>
     <main class="container-fluid vh-100 d-flex justify-content-center align-items-center">
         <section class="row py-2" style="width: 85%;">
-            <div class="col-xl-3 col-12">
-                <h2>Actualizar foto</h2>
-                <div class="card px-3 py-5 overflow-hidden shadow-sm d-flex justify-content-center align-items-center" style="width: 250px;">
-                    <div class="rounded-circle overflow-hidden" style="width: 100px; height: 100px;">
-                        <img style="width: 100%; display: block;" src="../<?php echo $Foto ?>" />
-                    </div>
-                    <form action="" class="mt-3" method="post">
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="formFileMultiple">
-                        </div>
-                        <button class="btn btn-success" class="d-grid">Cambiar</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-xl-9 col-12  d-flex justify-content-start align-items-center flex-wrap ">
+            <div class="col-12  d-flex justify-content-start align-items-center flex-wrap ">
                 <div class="ms-5">
                     <h2>Informacion personal</h2>
-                    <form action="../Acciones/cambiar_infromacion_guia.php" class="row " method="post">
+                    <form action="../Acciones/cambiar_infromacion_cliente.php" class="row " method="post">
                         <div class="col-12">
                             <label>Nombre </label>
                             <div>
@@ -65,7 +50,7 @@ $Foto = $_SESSION["Foto"];
                             </div>
                         </div>
                     </form>
-                    <form action="../Acciones/cambiar_contrasena.php" method="POST">
+                    <form action="../Acciones/cambiar_contrasena_cliente.php" method="POST">
                         <h2 class="mt-3">Cambiar Contraseña</h2>
 
                         <div class="col-12 mt-2">
