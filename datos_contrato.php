@@ -5,8 +5,8 @@ session_start();
 $Id = $_SESSION["Id"];
 
 
-$sql = "SELECT cliente.Nombres, cliente.Apellidos, cliente.Email, Cliente.Celular, contrato.Hora, contrato.fecha
-        FROM contrato INNER JOIN cliente ON contrato.Cliente_Id = cliente.Id WHERE Guia_Id = $Id";
+$sql = "SELECT cliente.Nombres, cliente.Apellidos, cliente.Email, Cliente.Celular, contrato.Hora, contrato.fecha, contrato.Id as id_contrato
+        FROM contrato INNER JOIN cliente ON contrato.Cliente_Id = cliente.Id WHERE Guia_Id = $Id and contrato.Estado = 'solicitado' ";
 $result = mysqli_query($con, $sql);
 
       $contenido_tabla="
@@ -33,8 +33,8 @@ $result = mysqli_query($con, $sql);
           <td>$row[Email]</td>
           <td>$row[fecha]</td>
           <td>$row[Hora]</td>
-          <td><button class ='btn btn-danger'> Rechazar</button></td>
-          <td><button class ='btn btn-success'> Aceptar</button></td>
+          <td><a href ='Acciones/rechazar_contrato.php?id=".$row["id_contrato"]." ' > <button class ='btn btn-danger'> Rechazar</button></a></td>
+          <td><a href ='Acciones/aceptar_contrato.php?id=".$row["id_contrato"]." '  ><button class ='btn btn-success'> Aceptar</button></a></td>
         </tr>";
           }
 

@@ -4,7 +4,7 @@ function mostrar_tabla() {
         url: "./datos_contrato.php",
         success: function (response) {
           document.getElementById('contenido-playas').innerHTML= "";
-         $('#contenido_tabla').html(response);
+          $('#contenido_tabla').html(response);
         }
     });
 }
