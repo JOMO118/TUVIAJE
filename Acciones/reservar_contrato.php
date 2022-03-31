@@ -1,10 +1,10 @@
 <?php
 include("../connection/Connection.php");
-// require_once "mensajes_correo.php";
+require_once "mensajes_correo.php";
 require_once "Enviar_whatsapp.php";
 
 
-// $enviar = new  mensajes_correo();
+$enviar = new  mensajes_correo();
 $envia_wa = new mensajes_whatsapp();
 session_start();
 
@@ -34,7 +34,7 @@ if($result===True){
   while($row = $result2->fetch_assoc()){
     $dataUser[] = $row;
   }
-  // $enviar-> send_email( $dataUser[0]["Email"], $Fecha, $Hora);
+  $enviar-> send_email( $dataUser[0]["Email"], $Fecha, $Hora);
   $envia_wa-> Enviar_whatsapp($Fecha, $Hora);
 }
 
@@ -46,7 +46,7 @@ if ($result === false) {
   echo"
   <script>
    alert('Se hizo la solicitud; espere respuesta');
-   window.location='../Cliente.php'
+  window.location='../Cliente.php'
 </script>";
 
   die();

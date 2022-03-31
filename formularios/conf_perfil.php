@@ -45,7 +45,7 @@ $Foto = $_SESSION["Foto"];
             <div class="col-xl-9 col-12  d-flex justify-content-start align-items-center flex-wrap ">
                 <div class="ms-5">
                     <h2>Informacion personal</h2>
-                    <form action="../Acciones/cambiar_infromacion_guia.php" class="row " method="post">
+                    <form action="../Acciones/cambiar_informacion_guia.php" class="row " method="post">
                         <div class="col-12">
                             <label>Nombre </label>
                             <div>

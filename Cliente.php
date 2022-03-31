@@ -6,6 +6,7 @@ include("connection/Connection.php");
 session_start();
 $nombre_usuario = $_SESSION["Nombre"];
 $apellido_usuario = $_SESSION["Apellidos"];
+$id_usuario = $_SESSION["Id"];
 
 if (isset($_SESSION["Id_playa"])) {
     $Id_sitio = $_SESSION["Id_playa"];
@@ -39,6 +40,7 @@ if (isset($_SESSION["Id_playa"])) {
 <head>
     <script src="JQUERY.js"></script>
     <script src="JS/mostrar_playas.js"></script>
+    <script src="JS/mostrar_historial.js"></script>
     <script src="JS/mostrar_guias.js"></script>
     <script src="JS/form_contratar_guia.js"></script>
     <link rel="stylesheet" href="CSS/estilos.css">
@@ -52,21 +54,18 @@ if (isset($_SESSION["Id_playa"])) {
     <title>Clientes</title>
 </head>
 <style>
-  body {
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      background-position: center;
-  }
+    body {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+    }
 
-  a{
-    font-size: 20px;
-  }
-
-
-  
-
+    a {
+        font-size: 20px;
+    }
 </style>
+
 <body id="contenido_fondo">
 
     <main class="container-fluid vh-100 ">
@@ -141,15 +140,19 @@ if (isset($_SESSION["Id_playa"])) {
                         }
                         ?>
 
+                        <br>
+                        <br>
                     </div>
+                    <a onclick="mostrar_historial()" class="list-group-item list-group-item-action" id="grupo_playas">
+                            Historial
+                        </a>
 
 
-                  
 
             </aside>
 
 
-            <section class="col-10 d-flex justify-content-start align-items-center flex-wrap "  style="padding-top: 20px;">
+            <section class="col-10 d-flex justify-content-start align-items-center flex-wrap " style="padding-top: 20px;">
 
                 <div id="contenido-playas">
 
@@ -161,7 +164,7 @@ if (isset($_SESSION["Id_playa"])) {
 
             </section>
         </main>
-       
+
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->
