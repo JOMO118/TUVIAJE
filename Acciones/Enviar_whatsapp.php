@@ -7,12 +7,12 @@ use Twilio\Rest\Client;
 require '../vendor/autoload.php';
 
  
-$sid    = "AC3590820266fb607545d7d4f31506efc0"; 
-$token  = "3f5800b2ab0a6be6f7c61cdf31ae3007"; 
+$sid    = "AC215b6717340270f89d6a1b225b28a8c9"; 
+$token  = "dcdbf8dd1e23274a0dac47c74189b64f"; 
 $twilio = new Client($sid, $token); 
  
 $message = $twilio->messages 
-                  ->create("whatsapp:+573003027866", // to 
+                  ->create("whatsapp:+573185149060", // to 
                            array( 
                                "from" => "whatsapp:+14155238886",       
                                "body" => "Señor(a) guia turistico, usted tiene una solicitud de un cliente para servirle de guia el dia  ".$fecha." a las ".$hora.", favor ingresa en tuviaje y responde esta solicitud." 
